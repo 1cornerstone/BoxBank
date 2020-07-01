@@ -1,15 +1,21 @@
-import 'package:boxbank/pages/splashscreen.dart';
+import 'package:boxbank/ui/dashboard.dart';
+import 'package:boxbank/ui/splashscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:boxbank/res/appColors.dart';
 
 void main() {
 
-  Color priColor = const Color(0xFF342ead);
 
   runApp(MaterialApp(
+    initialRoute:'/splash',
+    routes: {
+      '/splash' : (context) => Splashscreen(),
+      '/board' : (context) => Dashboard()
+
+    },
     theme: ThemeData(
-      primaryColor: priColor ,
-      accentColor: Colors.white,
-//      backgroundColor: const Color(0xFF292D32)
+      primaryColor: AppColors.primaryColor ,
+      accentColor: AppColors.whiteColor ,
     ),
     home: Splashscreen(),
     debugShowCheckedModeBanner: false,

@@ -1,5 +1,7 @@
+import 'package:boxbank/ui/Cards.dart';
 import 'package:boxbank/ui/dashboard.dart';
 import 'package:boxbank/ui/splashscreen.dart';
+import 'package:boxbank/ui/transactions.dart';
 import 'package:flutter/material.dart';
 import 'package:boxbank/res/appColors.dart';
 
@@ -10,7 +12,9 @@ void main() {
     initialRoute:'/splash',
     routes: {
       '/splash' : (context) => Splashscreen(),
-      '/board' : (context) => Dashboard()
+      '/board' : (context) => Dashboard(),
+      '/transactions' : (context) => Transactions(),
+      'cards' : (context) => Cards()
 
     },
     theme: ThemeData(

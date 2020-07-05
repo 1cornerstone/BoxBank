@@ -16,7 +16,7 @@ class Splashscreen extends StatelessWidget {
 
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.bgColor,
        body: LayoutBuilder(
          builder: (context,constraints){
             return OrientationBuilder(

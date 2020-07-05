@@ -16,7 +16,7 @@ class SizeConfig{
     if (orientation == Orientation.portrait) {
          _screenHeight = constraints.maxHeight;
           _screenWidth = constraints.maxWidth;
-         print('post');
+//         print('post');
 
     }else{
       _screenWidth = constraints.maxHeight;
@@ -27,7 +27,7 @@ class SizeConfig{
     divHeight = _screenHeight / 100;
     divWidth =  _screenWidth / 100;
 
-    print(divHeight);
+//    print(divHeight);
   }
 
   double getWidth()=> _screenWidth;

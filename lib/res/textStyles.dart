@@ -13,9 +13,22 @@ class Styles {
       color: AppColors.primaryColor
   );
 
-  static final TextStyle dashboardListTextStyle = TextStyle(
+  static final TextStyle textStyle = TextStyle(
       fontSize:  SizeConfig.divHeight  * 1.9 ,
       fontWeight: FontWeight.w600,
       color: AppColors.primaryColor
+  );
+
+  static final TextStyle textStyle2 = TextStyle(
+      fontSize:  SizeConfig.divHeight  * 2.0 ,
+      fontWeight: FontWeight.w800,
+      color: AppColors.bgColor,
+    letterSpacing: 0.5
+  );
+
+  static final TextStyle dropDownTextStyle= TextStyle(
+      fontSize:  SizeConfig.divHeight  * 2.0 ,
+      fontWeight: FontWeight.w800,
+
   );
 }

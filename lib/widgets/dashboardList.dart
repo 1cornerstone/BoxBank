@@ -46,7 +46,7 @@ class DashboardList extends StatelessWidget {
               Text(
                 _list[index].label,
                 textAlign: TextAlign.center,
-                style: Styles.dashboardListTextStyle,
+                style: Styles.textStyle,
               )
             ],
           ),

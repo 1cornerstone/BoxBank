@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:boxbank/res/appColors.dart';
 import 'package:boxbank/res/sizeConfig.dart';
+import 'package:boxbank/res/textStyles.dart';
 import 'package:boxbank/widgets/dashboardList.dart';
 import 'package:boxbank/widgets/topRect.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,9 +11,15 @@ import 'package:flutter/material.dart';
 class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+
+    Timer(Duration(seconds: 2), ()=>{
+      Navigator.of(context).pushNamed('/transactions')
+    });
+
     return SafeArea(
       child: Scaffold(
-          backgroundColor: AppColors.whiteColor.withOpacity(0.9),
+          backgroundColor: AppColors.bgColor,
           body: LayoutBuilder(
             builder: (context, constraints) {
               return OrientationBuilder(builder: (context, orientation) {
@@ -19,15 +28,15 @@ class Dashboard extends StatelessWidget {
                   children: <Widget>[
                     TopRect(0.3),
                     Positional(
-                      top: 30.0,
+                      top: 20.0,
                       child: _headText(),
                     ),
                     Positional(
-                      top: 70.0,
+                      top: 50.0,
                       child: _balance(),
                     ),
                     Container(
-                        margin: EdgeInsets.fromLTRB(10.0, 160, 10.0, 0.0),
+                        margin: EdgeInsets.fromLTRB(10.0, 130, 10.0, 0.0),
                         child: DashboardList()),
                   ],
                 );
@@ -65,15 +74,12 @@ class _headText extends StatelessWidget {
         children: <Widget>[
           Text(
             'Dashboard',
-            style: TextStyle(
-                fontSize: SizeConfig.divHeight * 2.5,
-                fontWeight: FontWeight.w600,
-                color: AppColors.whiteColor),
+            style: Styles.textStyle2
           ),
           Icon(
             Icons.notifications_none,
             color: AppColors.whiteColor,
-            size: SizeConfig.divHeight * 2.7,
+            size: SizeConfig.divHeight * 3.7,
           )
         ],
       ),

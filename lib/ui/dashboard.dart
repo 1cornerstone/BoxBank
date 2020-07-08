@@ -102,6 +102,7 @@ class _balance extends StatelessWidget {
           "Available Balance",
           style: TextStyle(
               fontWeight: FontWeight.w500,
+              fontSize:SizeConfig.divHeight * 1.8 ,
               color: AppColors.whiteColor.withOpacity(0.6)),
         ),
       ),

@@ -27,11 +27,8 @@ class Transactions extends StatelessWidget {
                       _dropDown(),
                        _transText(headTitle: 'Today (5 transactions)',tailTitle: 'View All',),
                          _List(list: today5,),
-                         SizedBox(height: 2,),
-                         _transText(headTitle: 'Yesterday (9 transactions)',tailTitle: 'View All',),
-                         SizedBox(height: 2,),
+                         _BtransText(headTitle: 'Yesterday (9 transactions)',tailTitle: 'View All',),
                          _List(list: trans9,),
-
                        ],
                      ),
                    )
@@ -189,6 +186,42 @@ class _transText extends StatelessWidget {
   }
 }
 
+class _BtransText extends StatelessWidget {
+  final String headTitle;
+  final String tailTitle;
+
+  const _BtransText({Key key, this.headTitle, this.tailTitle}) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+     padding: EdgeInsets.all(10.0),
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text(
+           headTitle,
+            style: Styles.textStyle3,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right:5.0),
+            child: FlatButton(
+              color: AppColors.whiteColor,
+              onPressed: () {},
+              child: Text(
+                tailTitle,
+                style: Styles.dropDownTextStyle,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class _List extends StatelessWidget {
   final List list;
 
@@ -200,10 +233,10 @@ class _List extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            margin: EdgeInsets.fromLTRB(10.0,5.0,10.0,5.0),
-            height: 90,
+            margin: EdgeInsets.fromLTRB(10.0,1.0,10.0,5.0),
+            height: 75,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.0)
+              borderRadius: BorderRadius.circular(40.0)
             ),
             child: Card(
               elevation: 5,
@@ -214,14 +247,14 @@ class _List extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.fromLTRB(15.0,5.0,10.0,5.0),
+                        margin: EdgeInsets.fromLTRB(15.0,5.0,10.0,0.0),
                         child: Icon(list[index].iconData,  color: AppColors.primaryColor.withOpacity(0.7)),
                         decoration: BoxDecoration(
                             color: AppColors.bgColor,
                             borderRadius: BorderRadius.circular(10.0)
                         ),
-                        height: 50,
-                        width: 50,
+                        height: 40,
+                        width: 40,
                         alignment: Alignment.center,
                       ),
                       SizedBox(width: 5),
@@ -255,13 +288,13 @@ class _List extends StatelessWidget {
                   ),
                   Container(
                     alignment: Alignment.centerRight,
-                      margin: EdgeInsets.fromLTRB(0.0,10.0,10.0,5.0),
+                      margin: EdgeInsets.fromLTRB(0.0,10.0,10.0,0.0),
                     child: Text(
-                        ((today5[index].type =="debit")? '-' : '+')+ '\$' + list[index].price.toString(),
+                        ((list[index].type =="debit")? '-' : '+')+ '\$' + list[index].price.toString(),
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                           fontSize: SizeConfig.divHeight * 2.30,
-                          color: (today5[index].type =="debit")? Colors.red[500] : Colors.orange[400],
+                          color: (list[index].type =="debit")? Colors.red[500] : Colors.orange[400],
 
                       ),),)
                 ],

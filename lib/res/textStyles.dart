@@ -1,6 +1,7 @@
 import 'package:boxbank/res/appColors.dart';
 import 'package:boxbank/res/sizeConfig.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Styles {
 
@@ -22,8 +23,15 @@ class Styles {
   static final TextStyle textStyle2 = TextStyle(
       fontSize:  SizeConfig.divHeight  * 2.0 ,
       fontWeight: FontWeight.w800,
-      color: AppColors.bgColor,
-    letterSpacing: 0.5
+      color: AppColors.whiteColor.withOpacity(0.7),
+    letterSpacing: 0.1
+  );
+
+  static final TextStyle textStyle3 = TextStyle(
+      fontSize:  SizeConfig.divHeight  * 2.0 ,
+      fontWeight: FontWeight.w800,
+      color: Colors.black,
+    letterSpacing: 0.1
   );
 
   static final TextStyle dropDownTextStyle= TextStyle(
